@@ -9,7 +9,7 @@ Window {
     height: 480
     visible: true
     color: "#010000"
-    visibility: Window.Windowed
+    visibility: Window.FullScreen
     title: qsTr("Hello World")
 
     Grid {
