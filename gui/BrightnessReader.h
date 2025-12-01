@@ -4,7 +4,7 @@
 #include <QObject>
 
 extern "C" {
-#include "../include/brightness.h"
+#include "brightness.h"
 }
 
 class BrightnessReader : public QObject

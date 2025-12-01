@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(AutoDisplay VERSION 0.1 LANGUAGES CXX)
+project(AutoDisplay VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -14,6 +14,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
 
 set(PROJECT_SOURCES
         gui/main.cpp
+        gui/BrightnessReader.cpp
+        gui/BrightnessReader.h
+        gui/brightness.c
+        gui/brightness.h
         gui/qml.qrc
         gui/img.qrc
 )
