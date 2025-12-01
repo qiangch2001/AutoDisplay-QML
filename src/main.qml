@@ -19,19 +19,44 @@ Window {
             height: parent.height / 2
             width: parent.width
 
-            Rectangle {
-                id: rectangle_red
-                visible: true
-                color: "#ff0000"
-                width: parent.width / 2
-                height: parent.height
-            }
 
-            Rectangle {
-                id: rectangle_green
-                color: "#00ff00"
+            Item {
+                id: item1
                 width: parent.width / 2
                 height: parent.height
+                Image {
+                    id: image1
+                    visible: true
+                    anchors.fill: parent
+                    source: "res/img1.jpg"
+                    fillMode: Image.Stretch
+                }
+                /*
+                Rectangle {
+                    id: rectangle1
+                    color: Qt.rgba(0, 0, 0, 0.0)
+                    anchors.fill: parent
+                }
+                */
+            }
+            Item {
+                id: item2
+                width: parent.width / 2
+                height: parent.height
+
+                Image {
+                    id: image2
+                    visible: true
+                    anchors.fill: parent
+                    source: "res/img1.jpg"
+                    fillMode: Image.Stretch
+                }
+
+                Rectangle {
+                    id: rectangle2
+                    color: Qt.rgba(0, 0, 0, 0.1)
+                    anchors.fill: parent
+                }
             }
         }
 
@@ -40,20 +65,43 @@ Window {
             height: parent.height / 2
             width: parent.width
 
-            Rectangle {
-                id: rectangle_blue
-                color: "#0000ff"
+            Item {
+                id: item3
                 width: parent.width / 2
                 height: parent.height
+
+                Image {
+                    id: image3
+                    visible: true
+                    anchors.fill: parent
+                    source: "res/img1.jpg"
+                    fillMode: Image.Stretch
+                }
+
+                Rectangle {
+                    id: rectangle3
+                    color: Qt.rgba(0, 0, 0, 0.5)
+                    anchors.fill: parent
+                }
             }
 
-            Image {
-                id: image
-                visible: true
-                source: "res/img1.jpg"
-                fillMode: Image.Stretch
+            Item {
+                id: item4
                 width: parent.width / 2
                 height: parent.height
+                Image {
+                    id: image4
+                    visible: true
+                    anchors.fill: parent
+                    source: "res/img1.jpg"
+                    fillMode: Image.Stretch
+                }
+
+                Rectangle {
+                    id: rectangle4
+                    color: Qt.rgba(0, 0, 0, 1)
+                    anchors.fill: parent
+                }
             }
         }
     }
