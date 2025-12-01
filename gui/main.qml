@@ -11,12 +11,14 @@ Window {
     title: qsTr("Hello World")
 
     property var brightnesses: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    property var images: ["res/img1.jpg", "res/img2.jpg", "res/img3.png", "res/img4.png", "res/img5.png"]
     property int bright_index: 0
+    property int img_index: 0
 
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            bright_index = (bright_index + 1) % 10
+            img_index = (img_index + 1) % 5
             console.log("Brightness:", brightnesses[bright_index])
         }
     }
@@ -25,7 +27,7 @@ Window {
         id: image
         visible: true
         anchors.fill: parent
-        source: "res/img1.jpg"
+        source: images[img_index]
         fillMode: Image.Stretch
     }
     Rectangle {
