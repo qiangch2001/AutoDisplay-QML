@@ -5,55 +5,56 @@ Window {
     id: window
     x: 0
     y: 0
-    width: 640
-    height: 480
     visible: true
     color: "#010000"
     visibility: Window.FullScreen
     title: qsTr("Hello World")
 
-    Grid {
-        id: grid
-        width: 640
-        height: 480
-        verticalItemAlignment: Grid.AlignVCenter
-        horizontalItemAlignment: Grid.AlignHCenter
-        rightPadding: 0
-        leftPadding: 0
-        bottomPadding: 0
-        topPadding: 0
-        rows: 2
-        columns: 2
+    Column {
+        id: column
+        anchors.fill: parent
 
-        Rectangle {
-            id: rectangle_red
-            width: 320
-            height: 240
-            visible: true
-            color: "#ff0000"
+        Row {
+            id: row1
+            height: parent.height / 2
+            width: parent.width
+
+            Rectangle {
+                id: rectangle_red
+                visible: true
+                color: "#ff0000"
+                width: parent.width / 2
+                height: parent.height
+            }
+
+            Rectangle {
+                id: rectangle_green
+                color: "#00ff00"
+                width: parent.width / 2
+                height: parent.height
+            }
         }
 
-        Rectangle {
-            id: rectangle_green
-            width: 320
-            height: 240
-            color: "#00ff00"
-        }
+        Row {
+            id: row2
+            height: parent.height / 2
+            width: parent.width
 
-        Rectangle {
-            id: rectangle_blue
-            width: 320
-            height: 240
-            color: "#0000ff"
-        }
+            Rectangle {
+                id: rectangle_blue
+                color: "#0000ff"
+                width: parent.width / 2
+                height: parent.height
+            }
 
-        Image {
-            id: image
-            width: 320
-            height: 240
-            visible: true
-            source: "res/img1.jpg"
-            fillMode: Image.Stretch
+            Image {
+                id: image
+                visible: true
+                source: "res/img1.jpg"
+                fillMode: Image.Stretch
+                width: parent.width / 2
+                height: parent.height
+            }
         }
     }
 }
