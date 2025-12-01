@@ -1,5 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+
+#include "BrightnessReader.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +12,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    BrightnessReader reader;
+    engine.rootContext()->setContextProperty("BrightnessReader", &reader);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

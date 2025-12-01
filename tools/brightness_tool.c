@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include "../include/brightness.h"
 
-int main() {
-    double brightness = fb_get_brightness();
+int main()
+{
+    int fb = fb_init("/dev/fb0");
+    if (fb < 0) {
+        fprintf(stderr, "Failed to open /dev/fb0\n");
+        return 1;
+    }
+
+    double brightness = fb_get_brightness(fb);
+    fb_close(fb);
 
     if (brightness < 0) {
         fprintf(stderr, "Failed to compute brightness\n");
